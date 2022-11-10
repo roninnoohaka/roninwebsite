@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github-kenshin:roninnoohaka/testwebsite.git",
+  "author": "h1mur4k3nsh1n <himura.kenshin.senpai@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "browser-sync start --port 4000 --watch --ss ."
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10"
+  }
+}

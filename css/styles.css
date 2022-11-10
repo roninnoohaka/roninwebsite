@@ -10,7 +10,7 @@
   --color-white: #ffffff;
   --color-light-bg-left: #f8f9fb;
   --color-light-bg-right: #fafbff;
-  --color-grey-7: #fbfcfe;;
+  --color-grey-7: #fbfcfe;
   --color-grey-6: #f2f2f2;
   --color-grey-5: #e0e0e0;
   --color-grey-4: #bdbdbd;
@@ -400,7 +400,7 @@ a {
 
 .header {
   position: relative;
-  padding: 1rem 3rem 5rem;
+  padding: 0;
   background-color: var(--color-primary);
 }
 
@@ -425,12 +425,6 @@ a {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
-  .header {
-    padding: 6rem 12rem 10rem;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .btc-illustration {
     display: block;
@@ -440,18 +434,23 @@ a {
 /* Header Top */
 
 .header__top {
+  color: var(--color-primary);
+  padding: 1rem 4rem;
+  height: 120px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 3.1rem;
+  background-color: white;
 }
 
 .header__top ul {
-  margin-right: 5.6rem;
+  margin-right: 3rem;
 }
 
 .header__top > nav {
   display: none;
+}
+.header__top > nav a {
+  color: inherit;
+  padding: 0 3rem;
 }
 
 .vertical-line {
@@ -462,12 +461,18 @@ a {
 }
 
 .header__top .logo {
+  flex-grow: 1;
   display: flex;
   align-items: center;
 }
 
 .header__top .logo img {
+  display: inline-block;
   margin-right: 1.6rem;
+  max-height: 100%;
+  max-width: 100%;
+  height: 120px;
+  width: auto;
 }
 
 @media screen and (min-width: 1024px) {
@@ -479,8 +484,10 @@ a {
   }
 
   .header__top > nav {
+    color: var(--color-primary);
     display: flex;
     align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -488,6 +495,7 @@ a {
 
 .header__body {
   text-align: center;
+  padding: 4rem;
 }
 
 .value-proposition .badge-container {
@@ -534,9 +542,18 @@ a {
 }
 
 .media-container {
+  padding: 12rem 0 12rem 12rem;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: left;
+}
+@media screen and (min-width: 768px) {
+  .media-container {
+    padding: 12rem 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .media {
@@ -628,7 +645,13 @@ a {
 .trade-securely {
   padding: 1rem 3rem 5rem;
   background-color: var(--color-light-bg-left);
-  background-image: -webkit-linear-gradient(top, var(--color-primary) 0%, var(--color-primary) 30%, var(--color-light-bg-left) 15%, var(--color-light-bg-left) 100%);
+  background-image: -webkit-linear-gradient(
+    top,
+    var(--color-primary) 0%,
+    var(--color-primary) 30%,
+    var(--color-light-bg-left) 15%,
+    var(--color-light-bg-left) 100%
+  );
   text-align: center;
   position: relative;
 }
@@ -658,7 +681,7 @@ a {
 
 .calculate__header {
   padding-bottom: 5.5rem;
-  background-color: var(--color-grey-7)
+  background-color: var(--color-grey-7);
 }
 
 .calculate__body {
@@ -741,7 +764,7 @@ a {
     padding-bottom: 5.5rem;
     display: flex;
     align-items: center;
-    background-color: var(--color-grey-7)
+    background-color: var(--color-grey-7);
   }
 
   .calculate__header > input {
@@ -755,7 +778,8 @@ a {
   }
 
   .currencies {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .currencies .card {
@@ -771,7 +795,7 @@ a {
 .features {
   position: relative;
   background-color: var(--color-secondary);
-  padding: 1rem 3rem 5rem;
+  padding: 5rem 3rem;
   text-align: center;
 }
 
@@ -784,7 +808,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+  justify-content: center;
+  margin: 5rem auto;
 }
 
 .features .banner--left {
@@ -825,7 +850,7 @@ a {
 
 @media screen and (min-width: 1024px) {
   .features {
-    padding: 10rem 0 10rem;
+    padding: 5rem 3rem;
   }
   .features > h2 {
     width: 30ch;
@@ -845,7 +870,6 @@ a {
     flex-direction: unset;
     align-items: unset;
     margin-bottom: 0;
-    margin-left: 5rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -858,7 +882,11 @@ a {
 /* Start Mining */
 
 .start-mining {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-secondary) 0%,
+    var(--color-primary) 100%
+  );
   padding: 1rem 3rem 5rem;
   position: relative;
 }
@@ -1055,7 +1083,6 @@ a {
 
 .coin-list {
   display: block;
-  width: 36.5rem;
   padding: 1rem 1rem 1rem 1rem;
   justify-content: center;
   align-items: center;
@@ -1069,8 +1096,8 @@ a {
   align-items: center;
   color: #ff960b;
   border: 1px solid #fff;
-  margin: 2% 2% 2% 2%;
-  padding: 5px 5px;
+  margin: 1rem;
+  padding: 2rem;
   border-radius: 8px;
 }
 
@@ -1091,3 +1118,15 @@ a {
   margin-bottom: 5px;
 }
 
+/* main width */
+.main-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.text--center {
+  text-align: center !important;
+}
+.orientate--center {
+  margin: auto auto;
+}
