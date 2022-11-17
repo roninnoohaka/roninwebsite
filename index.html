@@ -3,14 +3,21 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RT2GHGTEHF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT2GHGTEHF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-RT2GHGTEHF');
-</script>
+    gtag('config', 'G-RT2GHGTEHF');
+
+    // get claculator height
+    window.addEventListener('message', function (event) {
+      if (event.data.app == 'calculator') {
+        document.getElementById('calculator-app').height = event.data.height + 'px';
+      }
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,19 +70,20 @@
           </p>
           <button class="value-proposition__button btn btn--flex btn--accent">
             <a href="https://staking.roninnoohaka.com/" span class="text--standart text--medium">Start Staking</span>
-          <div class="chiron-icon-container">
-            <img src="images/chevron-right.svg" alt="Right Icon" /> </a>
-            </div>
-          </button>
+              <div class="chiron-icon-container">
+                <img src="images/chevron-right.svg" alt="Right Icon" />
+            </a>
         </div>
-        <img src="images/samurai1.svg" alt="samurai1" class="btc-illustration" data-rellax-horizontal-speed="-2"
-          data-rellax-vertical-scroll-axis="x" />
+        </button>
       </div>
+      <img src="images/samurai1.svg" alt="samurai1" class="btc-illustration" data-rellax-horizontal-speed="-2"
+        data-rellax-vertical-scroll-axis="x" />
+    </div>
     </div>
     <img class="background-item-1" src="images/background-item-1.svg" alt="" />
     <img class="background-item-2" src="images/background-item-2.svg" alt="" />
   </header>
-  
+
 
   <!-- Why Crappo -->
   <section class="why-crappo">
@@ -83,7 +91,7 @@
     <div class="media-container main-container">
       <div class="media">
         <div class="icon-container">
-          
+
         </div>
         <div>
           <h2>1 million</h2>
@@ -92,7 +100,7 @@
       </div>
       <div class="media">
         <div class="icon-container">
-          
+
         </div>
         <div>
           <h2>0%</h2>
@@ -101,7 +109,7 @@
       </div>
       <div class="media">
         <div class="icon-container">
-          
+
         </div>
         <div>
           <h2>100%</h2>
@@ -140,9 +148,9 @@
           <p class="value-proposition__text text text--medium text--regular">
             MARKETING, DEVELOPMENT & STAKING
           </p>
-          
+
         </div>
-        <img src="images/tax.jpg" alt="samurai1"/>
+        <img src="images/tax.jpg" alt="samurai1" />
       </div>
     </div>
     <span style="display:inline-block;height:30px;"></span>
@@ -229,18 +237,18 @@
     <h2>Check how much you can earn with Ronin No Ohaka Staking protocol.</h2>
     <p class="text text--standart text--regular text--muted">Let’s input your volume prediction to see how much ETH you
       can earn daily from staking Katana.</p>
-    <iframe
-        src="https://stackblitz.com/edit/vitejs-vite-idkm6v?embed=1&file=src/App.vue&theme=dark&view=preview"
-        height="600px" width="100%" style="
-              border: 0;
-              margin: 0 auto;
-              margin-bottom: .5rem;
-              display: block;
-              border-radius: 10px;
-              max-width: 800px;
-              min-width: 200px;
-            "></iframe>
-    
+    <iframe id="calculator-app" src="./calculator/index.html" frameborder="0" style="
+      border: 0;
+      margin: 0 auto;
+      margin-bottom: .5rem;
+      display: block;
+      border-radius: 10px;
+      max-width: 800px;
+      min-width: 200px;
+      width: 100%;
+      background-color: white;
+    "></iframe>
+    <div id="app"></div>
     <h2 class="text--primary">Invest securely and earn passive income from your Staked share or trade without token tax
       for maximal gains.</h2>
     <div class="currencies">
@@ -256,33 +264,34 @@
         </p>
         <button class="btn btn--flex btn--accent">
           <a href="https://staking.roninnoohaka.com/" span class="text--standart text--medium">Start Staking</span>
-          <div class="chiron-icon-container">
-            <img src="images/chevron-right.svg" alt="Right Icon" /> </a>
-          </div>
-        </button>
+            <div class="chiron-icon-container">
+              <img src="images/chevron-right.svg" alt="Right Icon" />
+          </a>
       </div>
-      <div class="card card--white">
-        <svg class="currency-icon">
-          <use xlink:href="images/currencies-sprite.svg#eth"></use>
-        </svg>
-        <div class="card__header">
-          <h3>Trade</h3>
-          <span class="text text--standart text--medium">KATANA</span>
-        </div>
-        <p class="text text-small text--regular card__text">Trade and earn from price diference on your Katana with ZERO
-          TAX TOKENOMICS.</p>
+      </button>
+    </div>
+    <div class="card card--white">
+      <svg class="currency-icon">
+        <use xlink:href="images/currencies-sprite.svg#eth"></use>
+      </svg>
+      <div class="card__header">
+        <h3>Trade</h3>
+        <span class="text text--standart text--medium">KATANA</span>
       </div>
-      <div class="card card--white">
-        <svg class="currency-icon">
-          <use xlink:href="images/currencies-sprite.svg#eth"></use>
-        </svg>
-        <div class="card__header">
-          <h3>Hold</h3>
-          <span class="text text--standart text--medium">KATANA</span>
-        </div>
-        <p class="text text-small text--regular card__text">Invest long term in Katana with peace of mind knowing LP
-          tokens are bured for eternity.</p>
+      <p class="text text-small text--regular card__text">Trade and earn from price diference on your Katana with ZERO
+        TAX TOKENOMICS.</p>
+    </div>
+    <div class="card card--white">
+      <svg class="currency-icon">
+        <use xlink:href="images/currencies-sprite.svg#eth"></use>
+      </svg>
+      <div class="card__header">
+        <h3>Hold</h3>
+        <span class="text text--standart text--medium">KATANA</span>
       </div>
+      <p class="text text-small text--regular card__text">Invest long term in Katana with peace of mind knowing LP
+        tokens are bured for eternity.</p>
+    </div>
     </div>
   </section>
 
